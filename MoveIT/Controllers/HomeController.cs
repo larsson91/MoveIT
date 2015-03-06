@@ -10,6 +10,9 @@ namespace MoveIT.Controllers
 {
     public class HomeController : Controller
     {
+
+        public static int num = 0;
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -22,7 +25,6 @@ namespace MoveIT.Controllers
         {
             
             Mapper.CreateMap<MoveInfoViewModel, PriceInfoViewModel>()
-                .ForMember(x => x.OffNo, opt => opt.Ignore())
                 .ForMember(x => x.EstimatedPrice, opt => opt.Ignore())
                 .ForMember(x => x.Link, opt => opt.Ignore());
 
@@ -44,7 +46,6 @@ namespace MoveIT.Controllers
         {
 
             Mapper.CreateMap<MoveInfoViewModel, PriceInfoViewModel>()
-                .ForMember(x => x.OffNo, opt => opt.Ignore())
                 .ForMember(x => x.EstimatedPrice, opt => opt.Ignore())
                 .ForMember(x => x.Link, opt => opt.Ignore());
 
@@ -65,7 +66,18 @@ namespace MoveIT.Controllers
             model.EstimatedPrice = GetPriceBasedOnDistance(model.Distance);
             model.EstimatedPrice = GetPriceBasedOnArea(model.MainArea, model.ExtraArea, model.EstimatedPrice);
             model.EstimatedPrice = (model.Piano) ? model.EstimatedPrice + 5000 : model.EstimatedPrice;
+            model.OffNo =  GetOffNo(model);
             return model;
+        }
+
+        private int GetOffNo(PriceInfoViewModel model)
+        {
+            if (model.OffNo != 0)
+            {
+                return model.OffNo;
+            }
+            num++;
+            return num;
         }
 
 

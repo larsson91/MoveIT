@@ -8,6 +8,9 @@ namespace MoveIT.Models
 {
     public class MoveInfoViewModel
     {
+        [Display(Name = "Offertnummer")]
+        public int OffNo { get; set; }
+
         [Display(Name = "Namn")]
         public string Name { get; set; }
 
