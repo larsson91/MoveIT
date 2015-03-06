@@ -83,10 +83,12 @@
                     <span> inkl. moms</span>
                 </div>
             </div>
-
             <div class="form-group">
-                <p>Vi sparar ditt prisförslag 90 dagar, för att se prisförslaget igen, besök: </p>
-                @Html.ActionLink("Offert", "PricePresentation", Model)
+                <p>Vi sparar ditt prisförslag i 90 dagar, för att se prisförslaget igen, besök: </p>
+                @Html.ActionLink("Länk till offert", "PricePresentation", Model)
+            </div>
+            <div class="form-group">
+                <p>Om du har frågor, kontakta flytt@MoveIT.se</p>
             </div>
             <div class="margin-up-2">
                 @Html.ActionLink("Ändra", "OldView", Model, new { @class = "btn btn-default" })
