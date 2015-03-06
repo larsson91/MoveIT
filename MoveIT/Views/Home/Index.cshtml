@@ -1,0 +1,79 @@
+﻿@model MoveIT.Models.MoveInfoViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        <hr />
+        <h4>Adressuppgifter</h4>
+        <div>
+            @Html.LabelFor(model => Model.Name)
+            <div>
+                @Html.EditorFor(model => Model.Name)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Email)
+            <div>
+                @Html.EditorFor(model => model.Email)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.MoveFrom)
+            <div>
+                @Html.EditorFor(model => model.MoveFrom)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.MoveTo)
+            <div>
+                @Html.EditorFor(model => model.MoveTo)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Distance)
+            <div>
+                @Html.EditorFor(model => model.Distance)
+            </div>
+        </div>
+
+        <h4>Om Bostaden</h4>
+
+        <div>
+            @Html.LabelFor(model => model.MainArea)
+            <div>
+                @Html.EditorFor(model => model.MainArea)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.ExtraArea)
+            <div>
+                @Html.EditorFor(model => model.ExtraArea)
+            </div>
+        </div>
+
+        <div>
+            @Html.EditorFor(model => model.Piano)
+            @Html.LabelFor(model => model.Piano)
+        </div>
+
+        <div>
+            @Html.EditorFor(model => model.HelpPacking)
+            @Html.LabelFor(model => model.HelpPacking)
+        </div>
+        <div>
+            <div>
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
